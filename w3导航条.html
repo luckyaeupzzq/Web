@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w3导航条</title>
+    <link rel="stylesheet" href="../../01css/reset.css">
+    <style>
+        /* 设置导航条容器的大小 */
+    .box{
+        width: 1210px;
+        height: 48px;
+        margin: 100px auto;
+    }
+
+    /* 设置横向导航条的大小和背景色 */
+    ul{
+        width: 100%;
+        height: 48px;
+        background-color: rgb(224, 224, 224);
+    }
+
+    /* 使导航条水平布局 */
+    nav li{
+        display: block;
+        font-size: 20px;
+        float: left;
+    }
+
+    /* 鼠标移入后改变背景色和前景色 */
+    a:hover{
+        background-color: rgb(14, 8, 8);
+        color: rgb(194, 196, 198);
+    }
+
+    /* 设置访问时的背景颜色 */
+    a:visited{
+        background-color: rgb(14, 8, 8);
+    }
+
+    /* 设置文字样式 */
+    a{
+        display: block;
+        color: rgb(159, 161, 162);
+        line-height: 48px;
+        text-align: center;
+    }
+
+    /* 设置每一个选项块的大小 */
+    .l1{
+        width: 166px;
+        height: 48px;
+    }
+
+    .l2{
+        width: 191px;
+        height: 48px;
+    }
+
+    .l3{
+        width: 175px;
+        height: 48px;
+    }
+
+    .l4{
+        width: 198px;
+        height: 48px;
+    }
+
+    .l5{
+        width: 113px;
+        height: 48px;
+    }
+
+    .l6{
+        width: 197px;
+        height: 48px;
+    }
+
+    .l7{
+        width: 170px;
+        height: 48px;
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="box">
+        <ul class="nav-top">
+            <li>
+                <a href="#" class="l1">HTML/CSS</a>
+            </li>
+            <li>
+                <a href="#" class="l2">Borwser Side</a>
+            </li>
+            <li>
+                <a href="#" class="l3">Server Side</a>
+            </li>
+            <li>
+                <a href="#" class="l4">Programming</a>
+            </li>
+            <li>
+                <a href="#" class="l5">XML</a>
+            </li>
+            <li>
+                <a href="#" class="l6">Web Building</a>
+            </li>
+            <li>
+                <a href="#" class="l7">Reference</a>
+            </li>
+        </ul>  
+    </nav>
+</body>
+</html>
