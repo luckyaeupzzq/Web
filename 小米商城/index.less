@@ -1,0 +1,505 @@
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    min-width: 1511px;
+}
+
+.clearfix::before,
+.clearfix::after {
+    /* 使用after加content: '';加display: table;解决 父子元素共用外边框问题
+                    设置后给子元素设置外边距,父元素不会改变
+            */
+    content: '';
+    display: table;
+    /* 使用after加content: '';加display: table;加clear: both;解决高度塌陷问题*/
+    clear: both;
+}
+
+header {
+    height: 140px;
+}
+
+// 顶部导航栏
+//外层容器
+.top-nav-box {
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    color: #b0b0b0;
+    line-height: 40px;
+    font-size: 12px;
+
+    //内部容器
+    .top-nav {
+        margin: 0 10.55% 0 9.55%;
+
+        a {
+            display: inline-block;
+        }
+
+        span {
+            display: inline-block;
+            width: 3.2334px;
+            margin: 0 3.6px;
+            color: #424242;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        //左侧列表
+        .l-list {
+            float: left;
+
+            .app-box {
+                position: relative;
+
+                .app {
+                    background-color: #fff;
+                    display: block;
+                    width: 124px;
+                    //设置过渡
+                    height: 0px;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 99;
+                    top: 40px;
+                    left: -45px;
+                    text-align: center;
+                    box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+                    transition: height 0.3s;
+
+                    img {
+                        margin-top: 20px;
+                        width: 95px;
+                        height: 95px;
+                    }
+
+                    .imtext {
+                        height: 25px;
+                        text-align: center;
+                        line-height: 25px;
+                        margin-top: -10px;
+                    }
+
+                }
+            }
+
+            //设置悬浮显示app
+            .app-box:hover .app {
+                height: 148px;
+            }
+
+            .app-box:hover::before {
+                display: block;
+            }
+
+            //小箭头
+            .app-box::before {
+                content: '';
+                display: none;
+                position: absolute;
+                z-index: 999;
+                border-style: solid;
+                border-color: transparent transparent rgb(251, 247, 247) transparent;
+                border-width: 8px 8px 8px 8px;
+                top: 24px;
+                left: 10px;
+            }
+        }
+
+        //右侧列表
+        .r-list {
+            float: right;
+            position: relative;
+            left: -25px;
+        }
+
+        //购物车区域祖先容器
+        .shopcar-box {
+            width: 120px;
+            height: 40px;
+            float: right;
+            text-align: center;
+            background-color: #424242;
+            position: relative;
+
+            i {
+                font-size: 20px;
+                vertical-align: -4px;
+            }
+
+            //购物车方块容器
+            .shop-box {
+                position: relative;
+                z-index: 99;
+            }
+
+            //隐藏购物车容器
+            .shopcar {
+                // display: none;
+                width: 316px;
+                // height: 100px;
+                height: 0;
+                overflow: hidden;
+                box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+                background-color: #fff;
+                position: absolute;
+                top: 40px;
+                left: -197px;
+                z-index: 98;
+                transition: height 0.5s;
+
+                p {
+                    padding-top: 30px;
+                    text-align: center;
+                }
+            }
+        }
+
+        //悬浮显示和样式设置
+        .shopcar-box:hover .shop-box {
+            padding-bottom: 0.5px;
+            background-color: #fff;
+            color: coral;
+        }
+
+        .shopcar-box:hover .shopcar {
+            display: block;
+            height: 100px;
+        }
+    }
+}
+
+.top-mian {
+    height: 100px;
+    // background-color: rgb(163, 229, 172);
+    margin: 0 10.55% 0 9.55%;
+
+    .logo-a {
+        float: left;
+
+        .logo {
+            width: 80px;
+            height: 78px;
+            margin: 8px 0 0px 0px;
+
+            img {
+                width: 78px;
+                height: 78px;
+                margin-left: -10px;
+            }
+        }
+    }
+
+    //设置鼠标悬浮时logo右移
+    .logo-a:hover img {
+        margin-left: -9px;
+    }
+
+    //中间菜单
+    .main-list {
+        height: 100px;
+        position: absolute;
+        margin-left: 232px;
+        // background-color: aqua;
+        font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+
+        a {
+            margin: 0 8.4px;
+            font-size: 16px;
+            line-height: 100px;
+            color: #333;
+        }
+
+        a:hover {
+            color: #ff6700;
+        }
+    }
+
+    // 搜索框
+    .search {
+        width: 296px;
+        height: 50px;
+        float: right;
+        line-height: 100px;
+        position: relative;
+        left: 15px;
+
+        input {
+            width: 223px;
+            height: 48px;
+            border: 1px solid rgba(0, 0, 0, 0.316);
+            padding-left: 20px;
+            color: #b0b0b0;
+        }
+
+        span {
+            width: 42.4px;
+            height: 48px;
+            border: 1px solid rgba(0, 0, 0, 0.316);
+            position: absolute;
+            border-radius: 1px;
+            border-left: none;
+            line-height: 48px;
+            text-align: center;
+            top: 25.3px;
+
+            i {
+                font-size: 24px;
+            }
+        }
+
+        .search-list {
+            display: none;
+            width: 242.7px;
+            height: 241.5px;
+            border: 1px solid #ff6700;
+            background-color: #fff;
+            border-top: none;
+            line-height: 1;
+            position: relative;
+            top: -25px;
+            padding-top: 2px;
+            font-size: 12px;
+            color: #424242;
+            z-index: 9999;
+
+            li {
+                height: 30px;
+                line-height: 30px;
+                padding-left: 20px;
+
+                a {
+                    display: block;
+                }
+            }
+
+            li:hover {
+                background-color: rgba(236, 236, 236, 0.371);
+            }
+        }
+
+        // 设置span悬浮样式
+        #hcolor:hover {
+            background-color: #ff6700;
+            color: #fff;
+            border-color: #ff6700;
+        }
+    }
+
+    // 设置搜索框悬浮样式
+    .search:hover input,
+    .search:hover span {
+        border-color: rgba(2, 2, 2, 0.507);
+    }
+
+    //设置获取焦点的样式
+    .search input:focus {
+        border-color: #ff6700;
+    }
+
+    input:focus~#hcolor {
+        border-color: #ff6700;
+    }
+
+    input:focus~.search-list {
+        display: block;
+    }
+}
+
+// 中间主体容器
+main {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+
+    //中间左侧列表
+    .main-list {
+        width: 234px;
+        height: 460px;
+        background-color: #a5a3a3a5;
+        color: #fff;
+        position: absolute;
+
+        li {
+            height: 42px;
+            line-height: 42px;
+            padding-left: 30px;
+
+            i {
+                float: right;
+                font-size: 35px;
+                margin-right: 10px;
+            }
+        }
+
+        :first-child {
+            margin-top: 20px;
+        }
+
+        li:hover {
+            background-color: rgb(255, 103, 0);
+        }
+    }
+
+    //中间图片容器
+    .img {
+        width: 1226px;
+        height: 460px;
+
+        img {
+            height: 460px;
+        }
+
+        //箭头
+        .l,
+        .r {
+            position: absolute;
+            font-size: 41px;
+            color: #d6d6d6;
+            width: 41px;
+            height: 69px;
+            top: 40%;
+            line-height: 69px;
+            border-radius: 2px;
+            //取消游览器默认双击选择文字的行为
+            user-select: none;
+        }
+
+        .l {
+            left: 233px;
+        }
+
+        .r {
+            right: 0px;
+        }
+
+        .l:hover,
+        .r:hover {
+            background-color: rgb(106, 106, 106);
+            //设置悬浮后鼠标指针的样式
+            cursor: pointer;
+        }
+
+        //悬浮点
+        .spot-box {
+            width: 400px;
+            height: 21px;
+            position: absolute;
+            bottom: 5%;
+            right: 2%;
+
+            a {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: rgba(0, 0, 0, .4);
+                float: right;
+                margin: 5px 5px;
+                border: 2px solid #a7a7a7;
+            }
+
+            a:hover {
+                background-color: #dcdcdc;
+                border: 2px solid #a7a7a7;
+            }
+
+            .spot-hover {
+                background-color: #dcdcdc;
+                border: 2px solid #a7a7a7;
+            }
+        }
+    }
+}
+
+.main-botton-box {
+    width: 1226px;
+    height: 170px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    >div {
+        width: 316px;
+        height: 170px;
+        img{
+            height: 100%;
+        }
+    }
+
+    .mb1-box {
+        width: 234px;
+        height: 170px;
+        background-color: #5f5750;
+        display: flex;
+        flex-flow:wrap;
+        li{
+            width: 76px;
+            height: 84px;
+            text-align: center;
+            color: rgba(228, 225, 225, 0.733);
+            position: relative;
+            a{
+                display: inline-block;
+                width: 76px;
+                height: 42px;
+                img{
+                    // filter: 60%;
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    margin:0 auto;
+                    padding-top:20px;
+                    padding-bottom: 5px;
+                }
+                span{
+                    font-size:13px;
+                }
+            }
+
+            a:hover{
+                color: #fff;
+            }
+        }
+    }
+}
+
+//设置小边框
+.mb1-box li::before{
+    content: '';
+    display: block;
+    width: 64px;
+    height: 0.5px;
+    background-color: #665e57;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.mb1-box li::after{
+    content: '';
+    display: block;
+    width: 0.5px;
+    height: 70px;
+    background-color: #665e57;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.banner{
+    width: 1226px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 40px;
+    img{
+        height: 100%;
+    }
+}
